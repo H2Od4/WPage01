@@ -1,0 +1,24 @@
+<!-- in den "geschweifte klammer% %geschweifte klammer" werden blöcke definiert -->
+<!-- die Idee ist, das man in einer HTML-Seite einen Bereich schreibt, -->
+<!-- welches in anderen HTML-Seiten ebenfalls verwendet wird. Damit man -->
+<!-- nicht alles überall abgeschrieben oder kopiert wird eigenen sich nur -->
+<!-- Blöcke in der Ziel-HTML-Seite zu schreiben wie hier zum Beispiel wie -->
+<!-- aus der "base.html" soll es hier dortige Blöcke hier verwenden -->
+
+<!-- mit "extends" wird gesagt, verwende aus "base.html" folgende Blöcke s.u. -->
+<!-- der Syntax ist "appsname/quellSeite.html" also "hostart" ist die quell appsname -->
+{% extends 'hostart/base.html' %}
+
+<!-- in der QuellSeite gibt es einen Block welches als "title" definiert wurde -->
+{% block title %} Hasans Webpage - Create new account {% endblock %}
+
+<!-- ein anderes Block definition in "base.html" was mit "authForm" anfängt -->
+{% block authForm %}
+
+<form method="post" action="">
+    {{ register_form.as_p }}
+    <button type="submit">Create account</button>
+</form>
+
+<!-- jeder Block endet mit "endblock" ausser "extends" -->
+{% endblock %}

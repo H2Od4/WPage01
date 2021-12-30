@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <!-- damit man gleiche html tags nicht immer und ewig in andere html-seiten -->
+    <!-- definiert gibt es eine einfache Methode "% Block Bezeichnung %} % endblock %} -->
+    <!-- alles dazwischen wird eins zu eins übernommen -->
+    <title>{% block title %} Hasans Webpage {% endblock %}</title>
+</head>
+<body>
+<h1>My first webpage</h1>
+<h3>First steps are very hard, but my name is Hasan and I love it to ride strong horses ;)</h3>
+<h1>Tournament</h1>
+<a href="{% url 'hostart:login' %}">Login</a>
+<a href="{% url 'hostart:register' %}">Create new account</a>
+{% block authForm %}
+
+
+{% endblock %}
+</body>
+</html>
