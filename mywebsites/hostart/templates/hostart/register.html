@@ -16,6 +16,8 @@
 {% block authForm %}
 
 <form method="post" action="">
+<!-- für die Sicherheit wird der csrf_token benötigt -->
+    {% csrf_token %}
     {{ register_form.as_p }}
     <button type="submit">Create account</button>
 </form>

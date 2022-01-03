@@ -14,5 +14,7 @@ app_name = 'hostart'
 urlpatterns = [
     path('', views.vindex, name='index'),
     path('login/', views.vlogin, name='login'),
+    path('logout/', views.vlogout, name='logout'),
     path('register/', views.vregister, name='register'),
+
 ]

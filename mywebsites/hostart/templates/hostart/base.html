@@ -11,8 +11,13 @@
 <h1>My first webpage</h1>
 <h3>First steps are very hard, but my name is Hasan and I love it to ride strong horses ;)</h3>
 <h1>Tournament</h1>
+{% if request.user.is_authenticated %}
+<p>Hallo {{request.user.username}}! </p>
+<a href="{% url 'hostart:logout' %}">Logout</a>
+{% else %}
 <a href="{% url 'hostart:login' %}">Login</a>
 <a href="{% url 'hostart:register' %}">Create new account</a>
+{% endif %}
 {% block authForm %}
 
 
